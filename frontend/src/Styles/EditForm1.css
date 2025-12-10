@@ -1,0 +1,162 @@
+/* ===== Glassmorphism Form Container ===== */
+.edit-form {
+    width: 80%;
+    max-width: 850px;
+    margin: 60px auto;
+    font-family: 'Poppins', sans-serif;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255, 232, 209, 0.2); /* semi-transparent */
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 1s ease-out, scaleUp 0.5s ease-in-out;
+    border: 1px solid rgba(237, 145, 33, 0.5);
+    position: relative;
+}
+
+/* Optional background overlay (food/kitchen image) */
+.edit-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 25px;
+    background: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    opacity: 0.1; /* subtle background */
+    z-index: 0;
+}
+
+/* Title Styles */
+.edit-form__title {
+    font-size: 2.8rem;
+    margin: 15px 0;
+    text-align: center;
+    color: #ED9121;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 1;
+    position: relative;
+    animation: fadeSlideIn 1s ease-out;
+}
+
+/* Label Styles */
+.edit-form__label {
+    display: block;
+    font-weight: 600;
+    margin-top: 25px;
+    color: #ED9121;
+    font-size: 18px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Input & Textarea Styles */
+.edit-form__input,
+.edit-form__textarea {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    border: 2px solid #ED9121;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255,255,255,0.85);
+    color: #000;
+    z-index: 1;
+    position: relative;
+}
+
+/* Focus effect */
+.edit-form__input:focus,
+.edit-form__textarea:focus {
+    border-color: #ff8a35;
+    box-shadow: 0 0 12px rgba(237, 145, 33, 0.5);
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* Textarea Styles */
+.edit-form__textarea {
+    height: 160px;
+    resize: none;
+}
+
+/* Button Group Styles */
+.edit-form__button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    gap: 20px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Button Styles */
+.edit-form__button {
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cancel Button */
+.edit-form__button--cancel {
+    background-color: #ffe8d1;
+    color: #ED9121;
+    border: 2px solid #ED9121;
+    box-shadow: 0 6px 12px rgba(237, 145, 33, 0.25);
+}
+
+.edit-form__button--cancel:hover {
+    background-color: #fdd8b0;
+    transform: scale(1.07);
+}
+
+/* Save Button */
+.edit-form__button--save {
+    background-color: #ED9121;
+    color: white;
+    box-shadow: 0 6px 12px rgba(237, 145, 33, 0.35);
+}
+
+.edit-form__button--save:hover {
+    background-color: #ff8a35;
+    transform: scale(1.12);
+    box-shadow: 0 8px 16px rgba(237, 145, 33, 0.5);
+}
+
+/* Disabled Save Button */
+.edit-form__button--save:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .edit-form {
+        width: 95%;
+        padding: 25px;
+    }
+    .edit-form__button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

@@ -1,0 +1,348 @@
+/* ============================================= */
+/*  Premium Event UI – Using #FF6B35 Theme */
+/* ============================================= */
+
+:root {
+  --primary: #FF6B35;
+  --primary-hover: #e85f2f;
+
+  --bg-light: #ffffff;
+  --bg-soft: #f9fafb;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+
+  --border-light: #e2e8f0;
+
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --card-shadow-strong: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: var(--bg-light);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow-strong);
+  color: var(--text-dark);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.container h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+/* Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: stretch;
+  padding: 8px 0;
+}
+
+@media(min-width:640px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media(min-width:1024px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+}
+
+@media(min-width:1280px) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+}
+
+/* ---------------------------------------------- */
+/*  Modern Premium Event Card (Fits your JSX)      */
+/* ---------------------------------------------- */
+
+.event-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gradient Header */
+.event-header {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8B4A 50%, #FBBF54 100%);
+  padding: 18px 20px;
+  color: white;
+  position: relative;
+}
+
+/* Date bubble */
+.event-header .event-date {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 6px 12px;
+  backdrop-filter: blur(6px);
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  margin-bottom: 8px;
+}
+
+/* Status Badge */
+.status-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.18);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  backdrop-filter: blur(4px);
+  font-weight: 600;
+}
+.status-upcoming { background: rgba(16,185,129,0.35); }
+.status-ongoing { background: rgba(59,130,246,0.35); }
+.status-completed { background: rgba(239,68,68,0.35); }
+
+/* Event Body */
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 16px 20px 8px 20px;
+  color: var(--text-dark);
+}
+
+.event-description {
+  margin: 0 20px 16px 20px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-size: 0.95rem;
+  min-height: 60px;
+}
+
+/* Details Section */
+.event-details {
+  padding: 0 20px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-detail {
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.event-detail a {
+  color: #FF6B35;
+  font-weight: 600;
+  text-decoration: none;
+}
+.event-detail a:hover {
+  text-decoration: underline;
+}
+
+/* Actions */
+.event-actions {
+  margin-top: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  background: #fafafa;
+}
+
+/* Animated Hover */
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+
+/* Default Button */
+.event-form button,
+.create-btn {
+  background: var(--primary);
+  color: white;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
+
+.event-form button:hover,
+.create-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.event button:active {
+  transform: translateY(0);
+}
+
+/* Edit Button */
+.edit-btn {
+  background: linear-gradient(145deg, #3b82f6, #60a5fa);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.edit-btn:hover {
+  background: linear-gradient(145deg, #2563eb, #3b82f6);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: linear-gradient(145deg, #ef4444, #f87171);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.delete-btn:hover {
+  background: linear-gradient(145deg, #dc2626, #ef4444);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.button.delete-btn:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.create-btn {
+  background: var(--primary);
+}
+
+/* Form */
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 100%;
+}
+
+.event-form input[type="text"],
+.event-form input[type="date"],
+.event-form textarea {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-soft);
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.event-form input[type="text"]::placeholder,
+.event-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.event-form textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.event-form input:focus,
+.event-form textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255,107,53,0.08);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.event-form label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.event-form .form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+  padding-top: 20px;
+}
+
+.event-form .form-actions button {
+  min-width: 140px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.event-form .form-actions button.cancel {
+  background: #f1f5f9;
+  color: var(--text-dark);
+}
+
+.event-form .form-actions button.cancel:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+/* Muted text */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
