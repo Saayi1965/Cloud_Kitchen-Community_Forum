@@ -321,55 +321,55 @@ const CreateTopic = () => {
                         </div>
                     </div>
                 </form>
+            </div>
 
-                {/* Preview Sidebar */}
-                <aside className="preview-sidebar">
-                    <div className="preview-card">
-                        <h3>Topic Preview</h3>
-                        <div className="preview-content">
-                            <div className="preview-header">
-                                <div className="preview-category">
-                                    {categoryOptions.find(c => c.value === category)?.icon || '📄'} 
-                                    {category || 'No category selected'}
-                                </div>
-                                <div className="preview-type">{type}</div>
+            {/* Preview Sidebar */}
+            <aside className="preview-sidebar">
+                <div className="preview-card">
+                    <h3>Topic Preview</h3>
+                    <div className="preview-content">
+                        <div className="preview-header">
+                            <div className="preview-category">
+                                {categoryOptions.find(c => c.value === category)?.icon || '📄'} 
+                                {category || 'No category selected'}
                             </div>
-                            
-                            <h4 className="preview-title">{title || 'Your title will appear here'}</h4>
-                            
-                            <p className="preview-description">
-                                {description.substring(0, 150) || 'Topic description preview...'}
-                                {description.length > 150 && '...'}
-                            </p>
-                            
-                            <div className="preview-tags">
-                                {tags.slice(0, 3).map((tag, index) => (
-                                    <span key={index} className="preview-tag">#{tag}</span>
-                                ))}
-                                {tags.length > 3 && (
-                                    <span className="preview-tag">+{tags.length - 3}</span>
-                                )}
-                            </div>
-                            
-                            <div className="preview-stats">
-                                <span className="stat">👍 0</span>
-                                <span className="stat">💬 0</span>
-                                <span className="stat">👁️ 0</span>
-                            </div>
+                            <div className="preview-type">{type}</div>
+                        </div>
+                        
+                        <h4 className="preview-title">{title || 'Your title will appear here'}</h4>
+                        
+                        <p className="preview-description">
+                            {description.substring(0, 150) || 'Topic description preview...'}
+                            {description.length > 150 && '...'}
+                        </p>
+                        
+                        <div className="preview-tags">
+                            {tags.slice(0, 3).map((tag, index) => (
+                                <span key={index} className="preview-tag">#{tag}</span>
+                            ))}
+                            {tags.length > 3 && (
+                                <span className="preview-tag">+{tags.length - 3}</span>
+                            )}
+                        </div>
+                        
+                        <div className="preview-stats">
+                            <span className="stat">👍 0</span>
+                            <span className="stat">💬 0</span>
+                            <span className="stat">👁️ 0</span>
                         </div>
                     </div>
+                </div>
 
-                    <div className="community-tips">
-                        <h4>💡 Community Tips</h4>
-                        <ul>
-                            <li>Use descriptive titles</li>
-                            <li>Add relevant tags</li>
-                            <li>Include images when possible</li>
-                            <li>Engage with responses</li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
+                <div className="community-tips">
+                    <h4>💡 Community Tips</h4>
+                    <ul>
+                        <li>Use descriptive titles</li>
+                        <li>Add relevant tags</li>
+                        <li>Include images when possible</li>
+                        <li>Engage with responses</li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     );
 };
