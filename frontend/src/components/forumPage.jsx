@@ -675,11 +675,11 @@ function ForumPage() {
                                                 className="stat-btn comment-btn"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    handleTopicClick(topic._id);
+                                                    navigate(`/comments/${topic._id}`);
                                                 }}
                                             >
                                                 <FaComment />
-                                                <span>{formatNumber(topic.comments?.length || 0)}</span>
+                                                <span>{topic.comments?.length || 0}</span>
                                             </button>
                                             <div className="stat-btn view-btn">
                                                 <FaEye />
@@ -698,7 +698,7 @@ function ForumPage() {
                                                 className="action-btnED"
                                                 onClick={(e) => {
                                                     e.stopPropagation();
-                                                    navigate(`/EditDelete/${topic._id}`);
+                                                    navigate(`/edit-form/${topic._id}`);
                                                 }}
                                                 title="Edit"
                                             >

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createTicket, updateTicket, getTicket } from '../api/ticketApi';
-import { FaSave, FaTimes, FaTicketAlt } from 'react-icons/fa';
+import { FaSave, FaTimes, FaTicketAlt, FaArrowLeft } from 'react-icons/fa';
 import '../Styles/ticket.css';
 
 const TicketForm = () => {
@@ -69,8 +69,12 @@ const TicketForm = () => {
     return (
         <div className="ticket-form-container">
             <div className="form-header">
+                <button className="back-btn" onClick={() => navigate('/tickets')}>
+                    <FaArrowLeft />
+                    <span>Back to Tickets</span>
+                </button>
                 <div className="header-content">
-                    <FaTicketAlt className="header-icon" />
+                
                     <h1>{isEditMode ? 'Edit Ticket' : 'Create New Ticket'}</h1>
                 </div>
             </div>

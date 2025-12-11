@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getTickets, deleteTicket, getTicketStats } from '../api/ticketApi';
-import { FaPlus, FaEdit, FaTrash, FaTicketAlt, FaFilter, FaChartLine } from 'react-icons/fa';
+import { FaPlus, FaEdit, FaTrash, FaTicketAlt, FaFilter, FaChartLine, FaArrowLeft } from 'react-icons/fa';
 import '../Styles/ticket.css';
 
 const TicketList = () => {
@@ -83,6 +83,10 @@ const TicketList = () => {
     return (
         <div className="ticket-container">
             <div className="ticket-header">
+                <button className="back-btn" onClick={() => navigate('/forumPage')}>
+                    <FaArrowLeft />
+                    <span>Back to Forum</span>
+                </button>
                 <div className="header-content">
                     <div className="header-left">
                         <FaTicketAlt className="header-icon" />

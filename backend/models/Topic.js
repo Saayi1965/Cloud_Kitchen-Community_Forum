@@ -57,7 +57,7 @@ const TopicSchema = new mongoose.Schema({
     },
     type: { 
         type: String, 
-        enum: ['Question', 'Conversation', 'Tip', 'Recipe'], 
+        enum: ['Question', 'Conversation', 'Tip', 'Recipe', 'Review', 'Discussion'], 
         required: true,
         default: 'Conversation'
     },

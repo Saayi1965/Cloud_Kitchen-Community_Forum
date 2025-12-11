@@ -4,14 +4,66 @@
     max-width: 850px;
     margin: 60px auto;
     font-family: 'Poppins', sans-serif;
-    padding: 40px;
+    padding: 70px;
     border-radius: 25px;
-    background: rgba(255, 232, 209, 0.2); /* semi-transparent */
+    background: rgb(255, 255, 255); /* semi-transparent */
     backdrop-filter: blur(12px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     animation: fadeIn 1s ease-out, scaleUp 0.5s ease-in-out;
-    border: 1px solid rgba(237, 145, 33, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     position: relative;
+}
+
+.edit-form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
+    background: linear-gradient(135deg, 
+        rgba(108, 117, 125, 0.95) 0%,
+        rgba(73, 80, 87, 0.95) 100%);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 5px 20px rgba(108, 117, 125, 0.3),
+        0 2px 8px rgba(108, 117, 125, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px) translateX(-1px);
+    box-shadow: 
+        0 8px 28px rgba(108, 117, 125, 0.4),
+        0 3px 12px rgba(108, 117, 125, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(73, 80, 87, 0.95) 0%,
+        rgba(108, 117, 125, 0.95) 100%);
+}
+
+.back-btn svg {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+    transform: translateX(-2px);
 }
 
 /* Optional background overlay (food/kitchen image) */
@@ -28,14 +80,14 @@
 /* Title Styles */
 .edit-form__title {
     font-size: 2.8rem;
-    margin: 15px 0;
-    text-align: center;
-    color: #ED9121;
+    margin: 0;
+    color: #000000;
     font-weight: 700;
-    text-transform: uppercase;
     z-index: 1;
     position: relative;
     animation: fadeSlideIn 1s ease-out;
+    text-align: center;
+    width: 100%;
 }
 
 /* Label Styles */
@@ -43,7 +95,7 @@
     display: block;
     font-weight: 600;
     margin-top: 25px;
-    color: #ED9121;
+    color: #000000;
     font-size: 18px;
     z-index: 1;
     position: relative;
@@ -55,12 +107,12 @@
     width: 100%;
     padding: 16px;
     margin-top: 10px;
-    border: 2px solid #ED9121;
+    border: 2px solid #545454;
     border-radius: 12px;
     font-size: 18px;
     transition: all 0.3s ease-in-out;
     background: rgba(255,255,255,0.85);
-    color: #000;
+    color: #676767;
     z-index: 1;
     position: relative;
 }
@@ -68,7 +120,7 @@
 /* Focus effect */
 .edit-form__input:focus,
 .edit-form__textarea:focus {
-    border-color: #ff8a35;
+    border-color: #fe6e07;
     box-shadow: 0 0 12px rgba(237, 145, 33, 0.5);
     outline: none;
     transform: scale(1.02);
@@ -104,8 +156,8 @@
 /* Cancel Button */
 .edit-form__button--cancel {
     background-color: #ffe8d1;
-    color: #ED9121;
-    border: 2px solid #ED9121;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
     box-shadow: 0 6px 12px rgba(237, 145, 33, 0.25);
 }
 
@@ -116,13 +168,13 @@
 
 /* Save Button */
 .edit-form__button--save {
-    background-color: #ED9121;
+    background-color: #ff8c00;
     color: white;
     box-shadow: 0 6px 12px rgba(237, 145, 33, 0.35);
 }
 
 .edit-form__button--save:hover {
-    background-color: #ff8a35;
+    background-color: #ff6a00;
     transform: scale(1.12);
     box-shadow: 0 8px 16px rgba(237, 145, 33, 0.5);
 }

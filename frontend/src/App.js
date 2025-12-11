@@ -5,9 +5,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Import your components
 import ForumPage from "./components/forumPage";
 import CreateTopic from "./components/createTopic";
-import EditDelete from "./components/EditDelete";
+import Comments from "./components/Comments";
 import EditForm from "./components/EditForm";
-import Guidelines from "./Guidelines";
+import Guidelines from "./components/Guidelines";
 import EventForm from "./components/EventForm";
 import EventList from "./components/EventList";
 import TicketList from "./components/TicketList";
@@ -25,7 +25,7 @@ function App() {
 
           {/* Topic operations */}
           <Route path="/create-topic" element={<CreateTopic />} />
-          <Route path="/EditDelete/:id" element={<EditDelete />} />
+          <Route path="/comments/:id" element={<Comments />} />
           <Route path="/edit-form/:id" element={<EditForm />} />
 
           {/* Extra pages */}

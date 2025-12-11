@@ -30,13 +30,66 @@
   animation: fadeIn 0.4s ease-out;
 }
 
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, 
+    rgba(108, 117, 125, 0.95) 0%,
+    rgba(73, 80, 87, 0.95) 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
+  box-shadow: 
+    0 5px 20px rgba(108, 117, 125, 0.3),
+    0 2px 8px rgba(108, 117, 125, 0.2);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px) translateX(-1px);
+  box-shadow: 
+    0 8px 28px rgba(108, 117, 125, 0.4),
+    0 3px 12px rgba(108, 117, 125, 0.3);
+  background: linear-gradient(135deg, 
+    rgba(73, 80, 87, 0.95) 0%,
+    rgba(108, 117, 125, 0.95) 100%);
+}
+
+.back-btn svg {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+  transform: translateX(-2px);
+}
+
 .container h2 {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 0;
   font-size: 2rem;
   color: var(--text-dark);
   font-weight: 700;
   letter-spacing: -0.5px;
   text-align: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* Grid */

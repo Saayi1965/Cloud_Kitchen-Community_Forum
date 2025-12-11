@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getEvents, deleteEvent } from "../api/eventApi";
+import { FaArrowLeft } from 'react-icons/fa';
 import '../Styles/event.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -70,6 +71,10 @@ const EventList = ({ username }) => {
     return (
         <div className="container">
             <div className="header">
+                <button className="back-btn" onClick={() => navigate('/forumPage')}>
+                    <FaArrowLeft />
+                    <span>Back to Forum</span>
+                </button>
                 <h2>Event Management</h2>
                 <p className="header-subtitle">Discover and manage upcoming events</p>
             </div>

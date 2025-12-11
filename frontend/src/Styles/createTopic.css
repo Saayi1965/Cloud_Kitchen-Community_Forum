@@ -1,7 +1,7 @@
 /* Create Topic Styles - Compact Premium Design */
 
 .create-topic-wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem;
     background: 
@@ -53,8 +53,8 @@
 
 .create-topic-container {
     background: linear-gradient(135deg, 
-        rgba(255, 255, 255, 0.95) 0%,
-        rgba(255, 255, 255, 0.98) 100%);
+        rgba(255, 255, 255, 0.484) 0%,
+        rgba(255, 255, 255, 0.581) 100%);
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: 
@@ -160,7 +160,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     box-shadow: 
         0 5px 20px rgba(108, 117, 125, 0.3),
         0 2px 8px rgba(108, 117, 125, 0.2);

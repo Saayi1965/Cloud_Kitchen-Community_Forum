@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 import '../Styles/EditForm1.css'
 
 function EditForm() {
@@ -56,7 +57,13 @@ function EditForm() {
 
     return (
         <div className="edit-form">
-            <h1 className="edit-form__title">Edit Topic</h1>
+            <div className="edit-form-header">
+                <button className="back-btn" onClick={() => navigate('/forumPage')}>
+                    <FaArrowLeft />
+                    <span>Back to Forum</span>
+                </button>
+                <h1 className="edit-form__title">Edit Topic</h1>
+            </div>
             <form onSubmit={handleSubmit} className="edit-form__form">
                 <label className="edit-form__label">Title</label>
                 <input 

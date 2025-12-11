@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createEvent, getEvent, updateEvent } from '../api/eventApi';
+import { FaArrowLeft } from 'react-icons/fa';
 import '../Styles/event.css';
 
 const EventForm = ({ usernameProp }) => {
@@ -53,7 +54,13 @@ const EventForm = ({ usernameProp }) => {
 
   return (
     <div className="container">
-      <h2>{id ? 'Edit Event' : 'Create Event'}</h2>
+      <div className="header">
+        <button className="back-btn" onClick={() => navigate('/events')}>
+          <FaArrowLeft />
+          <span>Back to Events</span>
+        </button>
+        <h2>{id ? 'Edit Event' : 'Create Event'}</h2>
+      </div>
       <form onSubmit={handleSubmit} className="event-form">
         <input type="text" placeholder="Event Title" value={title} onChange={e => setTitle(e.target.value)} required />
         <textarea placeholder="Event Description" value={description} onChange={e => setDescription(e.target.value)} required />

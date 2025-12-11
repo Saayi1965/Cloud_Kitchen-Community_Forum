@@ -438,6 +438,96 @@ router.post('/:id/comments', async (req, res) => {
 });
 
 // ============================================
+// UPDATE a Comment
+// ============================================
+router.put('/:topicId/comments/:commentId', async (req, res) => {
+    const { content } = req.body;
+
+    if (!content) {
+        return res.status(400).json({ 
+            success: false,
+            message: 'Content is required to update comment.' 
+        });
+    }
+
+    try {
+        const topic = await Topic.findById(req.params.topicId);
+        
+        if (!topic) {
+            return res.status(404).json({ 
+                success: false,
+                message: 'Topic not found.' 
+            });
+        }
+
+        const comment = topic.comments.id(req.params.commentId);
+        
+        if (!comment) {
+            return res.status(404).json({ 
+                success: false,
+                message: 'Comment not found.' 
+            });
+        }
+
+        comment.content = content;
+        topic.updatedAt = new Date();
+        await topic.save();
+
+        res.status(200).json({
+            success: true,
+            message: 'Comment updated successfully',
+            data: comment
+        });
+    } catch (error) {
+        console.error('❌ Error updating comment:', error.message);
+        res.status(500).json({ 
+            success: false,
+            error: 'Internal server error while updating comment.' 
+        });
+    }
+});
+
+// ============================================
+// DELETE a Comment
+// ============================================
+router.delete('/:topicId/comments/:commentId', async (req, res) => {
+    try {
+        const topic = await Topic.findById(req.params.topicId);
+        
+        if (!topic) {
+            return res.status(404).json({ 
+                success: false,
+                message: 'Topic not found.' 
+            });
+        }
+
+        const comment = topic.comments.id(req.params.commentId);
+        
+        if (!comment) {
+            return res.status(404).json({ 
+                success: false,
+                message: 'Comment not found.' 
+            });
+        }
+
+        comment.remove();
+        topic.updatedAt = new Date();
+        await topic.save();
+
+        res.status(200).json({
+            success: true,
+            message: 'Comment deleted successfully'
+        });
+    } catch (error) {
+        console.error('❌ Error deleting comment:', error.message);
+        res.status(500).json({ 
+            success: false,
+            error: 'Internal server error while deleting comment.' 
+        });
+    }
+});
+
+// ============================================
 // LIKE a Comment
 // ============================================
 router.post('/:topicId/comments/:commentId/like', async (req, res) => {

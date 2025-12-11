@@ -111,7 +111,7 @@ const CreateTopic = () => {
                     </button>
                     
                     <div className="header-content">
-                        <div className="header-icon">🍳</div>
+                        <div className="header-icon"></div>
                         <div>
                             <h1>Start a New Discussion</h1>
                             <p>Share your culinary thoughts with the community</p>
